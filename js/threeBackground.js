@@ -3,7 +3,7 @@ var camera, clock, scene, renderer
 var geometry, position, plane
 
 
-const textureURL = 'dots.png'
+const textureURL = 'http://commonzenmedia.com/images/dots.png'
 
 
 function init() {
@@ -21,7 +21,8 @@ function init() {
 
 	//Camera
 	camera = new THREE.PerspectiveCamera (69, window.innerWidth / window.innerHeight, 1, 20000)
-	camera.position.set( 100, 290 , -405 )
+	camera.position.set( -20, 100 , -200 )
+	camera.rotateY(-Math.PI)
 	
 	//Plane
 	geometry = new THREE.PlaneBufferGeometry( 2000, 2000, 1000, 1000)
@@ -31,7 +32,9 @@ function init() {
 
 	//Texture
 	var texture = new THREE.TextureLoader().load( textureURL )
-	plane = new THREE.Mesh ( geometry, new THREE.MeshBasicMaterial( { map: texture}) )
+	var material = new THREE.MeshBasicMaterial({color: 0xffffff});
+	material.map = texture;
+	plane = new THREE.Mesh ( geometry, material )
 	scene.add( plane )
 
 
@@ -52,7 +55,7 @@ function animate() {
 }
 
 
-let waveSpeed = 0.7 
+let waveSpeed = 0.6 
 
 let waveHeightMax = 60
 
