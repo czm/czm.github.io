@@ -3,7 +3,7 @@ var camera, clock, scene, renderer
 var geometry, position, plane
 
 
-const textureURL = 'images/dots.png'
+const textureURL = 'dots.png'
 
 
 function init() {
