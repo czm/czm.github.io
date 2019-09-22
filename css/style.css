@@ -1,0 +1,16 @@
+body{
+	min-height:100vh;
+	margin:0px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+canvas{
+	display:block;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+}
