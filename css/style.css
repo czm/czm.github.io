@@ -1,3 +1,82 @@
+:root {
+  /* Mode switch vars */
+  --switch-width: 40px;
+  --switch-height: calc(var(--switch-width) / 2);
+  --switch-distance: calc(var(--switch-width) - var(--switch-height));
+
+  /* Light mode bw shades */
+  --light-1: rgb(240, 240, 240);
+  --light-2: rgb(200, 200, 200);
+  --light-3: rgb(160, 160, 160);
+  --light-4: rgb(120, 120, 120);
+  --light-5: rgb(60, 60, 60);
+  --light-6: rgb(0, 0, 0);
+  --light-1-25: rgba(240, 240, 240, .25);
+  --light-1-50: rgba(240, 240, 240, .5);
+
+  --light-6-25: rgba(0, 0, 0, .25);
+  --light-6-50: rgba(0, 0, 0, .50);
+  
+  /* Dark mode bw shades */
+  --dark-1: rgb(0, 0, 0);
+  --dark-2: rgb(60, 60, 60);
+  --dark-3: rgb(120, 120, 120);
+  --dark-4: rgb(160, 160, 160);
+  --dark-5: rgb(200, 200, 200);
+  --dark-6: rgb(240, 240, 240);
+  --dark-6-25: rgb(240, 240, 240, .25);
+  --dark-6-50: rgb(240, 240, 240, .5);
+
+  /* Light mode colors */
+  --light-r: rgb(255, 0, 0);
+  --light-o: rgb(255, 127, 0); /* orange */
+  --light-y: rgb(255, 255, 0);
+  --light-u: rgb(127, 255, 0); /* chartreuse */
+  --light-g: rgb(0, 255, 0);
+  --light-s: rgb(0, 255, 127); /* spring green */
+  --light-c: rgb(0, 255, 255);
+  --light-a: rgb(0, 127, 255); /* Azure */
+  --light-b: rgb(0, 0, 255);
+  --light-v: rgb(127, 0, 255); /* Violet */
+  --light-m: rgb(255, 0, 255);
+  --light-e: rgb(255, 0, 127); /* Rose */
+
+  /* Dark mode colors -- dark negative versions of light */
+  --dark-c: rgb(66, 0, 0);
+  --dark-a: rgb(66, 33, 0);
+  --dark-b: rgb(66, 66, 0);
+  --dark-v: rgb(33, 66, 0);
+  --dark-m: rgb(0, 66, 0);
+  --dark-e: rgb(0, 66, 33);
+  --dark-r: rgb(0, 66, 66);
+  --dark-o: rgb(0, 33, 66);
+  --dark-y: rgb(0, 0, 66);
+  --dark-u: rgb(33, 0, 66);
+  --dark-g: rgb(66, 0, 66);
+  --dark-s: rgb(66, 0, 33);
+
+  /* Style variables */
+  --color-1: var(--light-1);
+  --color-2: var(--light-2);
+  --color-3: var(--light-3);
+  --color-4: var(--light-4);
+  --color-5: var(--light-5);
+  --color-6: var(--light-6);
+  --color-r: var(--light-r);
+  --color-o: var(--light-o);
+  --color-y: var(--light-y);
+  --color-u: var(--light-u);
+  --color-g: var(--light-g);
+  --color-s: var(--light-s);
+  --color-c: var(--light-c);
+  --color-a: var(--light-a);
+  --color-b: var(--light-b);
+  --color-v: var(--light-v);
+  --color-m: var(--light-m);
+  --color-e: var(--light-e);
+}
+
+
 html, body{
 	min-height:100vh;
 	margin:0px;
@@ -88,3 +167,134 @@ canvas{
       bottom: 0;
       right: 0;
     }
+
+/* PORTFOLIO */
+
+section#portfolio{
+  padding: 10% 0;
+  font-family: "Cabin", sans-serif;
+
+}
+
+#portfolio {
+  background: var(--color-1);
+  background-image: linear-gradient(
+    60deg,
+    var(--color-b) -200%,
+    var(--color-1) 50%,
+    var(--color-a) 200%
+  );
+  z-index: 2;
+  position: relative;
+  color: var(--color-5);
+}
+#portfolio h2 {
+  font-size: 2rem;
+}
+
+.projects{
+  width: 95%;
+  max-width: 1700px;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.project {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  border-radius: 20px;
+  /* background-color: rgba(0,0,0,.02); */
+  background-image: linear-gradient(to bottom, var(--color-1), transparent);
+  backdrop-filter: blur(100px);
+  /* filter: drop-shadow(); */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px -4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px -2px 4px -1px;
+  max-width: 500px;
+  width: fit-content;
+  height: 100%;
+  z-index: 30;
+  margin: auto;
+}
+
+.project img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-position: center;
+  margin-bottom: -5rem;
+}
+.project h3 {
+  padding: 25px 15px;
+  /* border-radius: 10px 10px 0 0; */
+  color: var(--color-1);
+  background-color: #ED2E80;
+  margin: 0;
+  margin-bottom: 0;
+  font-size: 1.8rem;
+  font-weight: 100;
+  font-family: "Cabin", sans-serif;
+
+}
+.project > h4 {
+  padding: 10px 15px;
+  background-color: #A5CD39;
+  color: var(--color-5);
+  font-size: 1.2rem;
+  font-weight: 100;
+  align-self: flex-end;
+  font-family: "Cabin", sans-serif;
+  margin: 0;
+
+}
+.project > p {
+  padding: 10px 5% 20px;
+  flex-grow: 1;
+  font-family: "Cabin", sans-serif;
+  margin: 0;
+}
+.project-content {
+  max-width: 80%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  font-family: "Cabin", sans-serif;
+
+}
+
+.project ul {
+  margin-bottom: 30px;
+}
+
+.project li {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.05rem;
+}
+.project button {
+  min-width: 222px;
+  margin: 0px auto;
+  font-size: 1.2rem;
+  padding: 0.7rem 1.5rem;
+  display: block;
+  border-radius: 0.75rem;
+  color: black;
+  background-color: rgb(255, 213, 0);
+  transition: all .3s linear;
+  /* background-image: linear-gradient(60deg, var(--color-3) 25%, var(--color-1)); */
+  cursor: pointer;
+}
+
+.project button:hover{
+  background-color: var(--color-1);
+  color: var(--color-4)
+
+}
