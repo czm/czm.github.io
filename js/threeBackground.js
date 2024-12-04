@@ -33,7 +33,11 @@ function init() {
   //Texture
   var texture = new THREE.TextureLoader().load(textureURL, function () {
     // Show the canvas once the texture is loaded
+    renderer.domElement.style.opacity = 0;
+    renderer.domElement.style.transition = "all 2s ease-in";
+    console.log(renderer.domElement)
     document.body.appendChild(renderer.domElement);
+    setTimeout(() => renderer.domElement.style.opacity = 1, 200)
   });
   var material = new THREE.MeshBasicMaterial({ color: 0xffffff });
   material.map = texture;
