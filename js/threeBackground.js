@@ -13,6 +13,7 @@ function init() {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(0xffffff);
+  renderer.domElement.style.display = "hidden";
   document.body.appendChild(renderer.domElement);
 
   //Camera
