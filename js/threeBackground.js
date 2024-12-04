@@ -13,8 +13,6 @@ function init() {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(0xffffff);
-  renderer.domElement.style.display = "hidden";
-  document.body.appendChild(renderer.domElement);
 
   //Camera
   camera = new THREE.PerspectiveCamera(
@@ -35,7 +33,7 @@ function init() {
   //Texture
   var texture = new THREE.TextureLoader().load(textureURL, function () {
     // Show the canvas once the texture is loaded
-    renderer.domElement.style.display = "block";
+    document.body.appendChild(renderer.domElement);
   });
   var material = new THREE.MeshBasicMaterial({ color: 0xffffff });
   material.map = texture;
